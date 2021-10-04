@@ -75,7 +75,7 @@ const ProductPage = ({ history, match }) => {
               <ListGroup variant='flush'>
                 <ListGroup.Item>
                   <Row>
-                    <Col>Price</Col>
+                    <Col>Price:</Col>
                     <Col>
                       <strong>N{product.price}</strong>
                     </Col>
@@ -94,7 +94,7 @@ const ProductPage = ({ history, match }) => {
                 {product.countInStock > 0 && (
                   <ListGroup.Item>
                     <Row>
-                      <Col>Qty</Col>
+                      <Col>Qty:</Col>
                       <Col>
                         <Form.Control
                           as='select'
