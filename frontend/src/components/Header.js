@@ -10,7 +10,9 @@ const Header = () => {
           <Navbar.Brand>Ankara</Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
-        <Navbar.Collapse id='responsive-navbar-nav'>
+        <Navbar.Collapse
+          id='responsive-navbar-nav'
+          className='justify-content-end'>
           <Nav className='mr-auto'>
             <LinkContainer to='/cart'>
               <Nav.Link>
