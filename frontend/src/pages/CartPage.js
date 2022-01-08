@@ -1,42 +1,34 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import {
-  Row,
-  Col,
-  ListGroup,
-  Image,
-  Form,
-  Button,
-  Card,
-} from 'react-bootstrap';
-import Message from '../components/Message';
-import { addToCart, removeFromCart } from '../actions/cartActions';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
+import Message from '../components/Message'
+import { addToCart, removeFromCart } from '../actions/cartActions'
 
 const CartPage = ({ match, location, history }) => {
-  const productId = match.params.id;
+  const productId = match.params.id
 
-  const qty = location.search ? Number(location.search.split('=')[1]) : 1;
+  const qty = location.search ? Number(location.search.split('=')[1]) : 1
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
-  const cart = useSelector(state => state.cart);
+  const cart = useSelector(state => state.cart)
 
-  const { cartItems } = cart;
+  const { cartItems } = cart
 
   useEffect(() => {
     if (productId) {
-      dispatch(addToCart(productId, qty));
+      dispatch(addToCart(productId, qty))
     }
-  }, [dispatch, productId, qty]);
+  }, [dispatch, productId, qty])
 
   const removeFromCartHandler = id => {
-    dispatch(removeFromCart(id));
-  };
+    dispatch(removeFromCart(id))
+  }
 
   const checkoutHandler = () => {
-    history.push('/login?redirect=shipping');
-  };
+    history.push('/login?redirect=shipping')
+  }
 
   return (
     <Row>
@@ -59,7 +51,8 @@ const CartPage = ({ match, location, history }) => {
                   </Col>
                   <Col md={2}>N{item.price}</Col>
                   <Col md={2}>
-                    <Form.Control
+                    <button onClick={removeFromCart}>-</button>{' '}
+                    {/* <Form.Control
                       as='select'
                       value={item.qty}
                       onChange={e =>
@@ -72,7 +65,8 @@ const CartPage = ({ match, location, history }) => {
                           {x + 1}
                         </option>
                       ))}
-                    </Form.Control>
+                    </Form.Control> */}
+                    <button onClick={addToCart}>+</button>
                   </Col>
                   <Col md={2}>
                     <Button
@@ -114,7 +108,7 @@ const CartPage = ({ match, location, history }) => {
         </Card>
       </Col>
     </Row>
-  );
-};
+  )
+}
 
-export default CartPage;
+export default CartPage
