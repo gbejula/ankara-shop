@@ -13,10 +13,10 @@ function App() {
       <Header />
       <main className='py-3'>
         <Container>
-          <Route path='/login' element={<LoginPage />} />
-          <Route path='/product/:id' element={<ProductPage />} />
-          <Route path='/cart/:id?' element={<CartPage />} />
-          <Route path='/' element={<HomePage />} />
+          <Route path='/signin' component={LoginPage} />
+          <Route path='/product/:id' component={ProductPage} />
+          <Route path='/cart/:id?' component={CartPage} />
+          <Route path='/' component={HomePage} exact />
         </Container>
       </main>
       <Footer />
