@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Button, Row, Col } from 'react-bootstrap';
-import Message from '../components/Message';
-import Loader from '../components/Loader';
 import { useDispatch, useSelector } from 'react-redux';
 import FormContainer from '../components/FormContainer';
+import Message from '../components/Message';
+import Loader from '../components/Loader';
 import { login } from '../actions/userActions';
 
 const LoginPage = ({ location, history }) => {
@@ -14,8 +14,7 @@ const LoginPage = ({ location, history }) => {
   const dispatch = useDispatch();
 
   const userLogin = useSelector(state => state.userLogin);
-
-  const { userInfo, loading, error } = userLogin;
+  const { loading, error, userInfo } = userLogin;
 
   const redirect = location.search ? location.search.split('=')[1] : '/';
 
@@ -23,7 +22,7 @@ const LoginPage = ({ location, history }) => {
     if (userInfo) {
       history.push(redirect);
     }
-  }, [history, userInfo, redirect]);
+  }, [history, redirect, userInfo]);
 
   const submitHandler = e => {
     e.preventDefault();
@@ -53,16 +52,16 @@ const LoginPage = ({ location, history }) => {
             value={password}
             onChange={e => setPassword(e.target.value)}></Form.Control>
         </Form.Group>
-      </Form>
 
-      <Button type='submit' variant='primary'>
-        Sign In
-      </Button>
+        <Button type='submit' variant='primary'>
+          Sign In
+        </Button>
+      </Form>
 
       <Row className='py-3'>
         <Col>
-          New Customer?{' '}
-          <Link to={redirect ? `/register?redirect=${redirect}` : 'register'}>
+          New Customer ?
+          <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
             Register
           </Link>
         </Col>
