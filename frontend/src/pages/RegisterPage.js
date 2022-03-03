@@ -49,6 +49,7 @@ const RegisterPage = ({ location, history }) => {
             type='name'
             placeholder='Enter name'
             value={name}
+            className='mb-3'
             onChange={e => setName(e.target.value)}></Form.Control>
         </Form.Group>
 
@@ -58,6 +59,7 @@ const RegisterPage = ({ location, history }) => {
             type='email'
             placeholder='Enter email'
             value={email}
+            className='mb-3'
             onChange={e => setEmail(e.target.value)}></Form.Control>
         </Form.Group>
 
@@ -67,6 +69,7 @@ const RegisterPage = ({ location, history }) => {
             type='password'
             placeholder='Enter password'
             value={password}
+            className='mb-3'
             onChange={e => setPassword(e.target.value)}></Form.Control>
         </Form.Group>
 
@@ -76,6 +79,7 @@ const RegisterPage = ({ location, history }) => {
             type='password'
             placeholder='Confirm password'
             value={confirmPassword}
+            className='mb-3'
             onChange={e => setConfirmPassword(e.target.value)}></Form.Control>
         </Form.Group>
 
