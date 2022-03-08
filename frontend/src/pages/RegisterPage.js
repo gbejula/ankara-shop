@@ -73,7 +73,7 @@ const RegisterPage = ({ location, history }) => {
             onChange={e => setPassword(e.target.value)}></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId='password'>
+        <Form.Group controlId='confirmPassword'>
           <Form.Label>Confirm Password</Form.Label>
           <Form.Control
             type='password'
