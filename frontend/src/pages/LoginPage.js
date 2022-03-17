@@ -29,6 +29,8 @@ const LoginPage = ({ location, history }) => {
     dispatch(login(email, password));
   };
 
+  console.log(userLogin);
+
   return (
     <FormContainer>
       <h1>Sign In</h1>
