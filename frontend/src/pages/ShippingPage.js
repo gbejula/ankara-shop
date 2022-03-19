@@ -34,6 +34,7 @@ const ShippingPage = ({ history }) => {
             placeholder='Enter address'
             value={address}
             required
+            className='mb-2'
             onChange={e => setAddress(e.target.value)}></Form.Control>
         </Form.Group>
 
@@ -44,6 +45,7 @@ const ShippingPage = ({ history }) => {
             placeholder='Enter city'
             value={city}
             required
+            className='mb-2'
             onChange={e => setCity(e.target.value)}></Form.Control>
         </Form.Group>
 
@@ -54,6 +56,7 @@ const ShippingPage = ({ history }) => {
             placeholder='Enter postal code'
             value={postalCode}
             required
+            className='mb-2'
             onChange={e => setPostalCode(e.target.value)}></Form.Control>
         </Form.Group>
 
@@ -64,6 +67,7 @@ const ShippingPage = ({ history }) => {
             placeholder='Enter Country'
             value={country}
             required
+            className='mb-2'
             onChange={e => setCountry(e.target.value)}></Form.Control>
         </Form.Group>
 
