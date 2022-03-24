@@ -22,7 +22,7 @@ const PlaceOrderPage = ({ history }) => {
   cart.totalPrice = (
     Number(cart.itemsPrice) +
     Number(cart.taxPrice) +
-    Number(taxPrice)
+    Number(cart.shippingPrice)
   ).toFixed(2);
   const placeOrderHandler = () => {
     console.log('order');
